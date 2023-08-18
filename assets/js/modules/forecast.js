@@ -1,15 +1,14 @@
-import { meteoLt } from "./api";
-import { codeToIcon as ltftCodeToIcon } from "./weathericon";
-import { codeToComm as ltftCodeToComm } from "./weathercomm";
+import { fetchMeteo } from "../api";
+import { codeToIcon as forecastCodeToIcon } from "../utils/weathericon";
+import { codeToComm as forecastCodeToComm } from "../utils/weathercomm";
 
 export async function main() {
-  const data = await meteoLt();
+  const data = await fetchMeteo();
 
   const currentDate = new Date().getDate();
-
-  const prevDivs = document.querySelectorAll(".lt-prev-day");
-  const tempDivs = document.querySelectorAll(".lt-max-temp");
-  const minDivs = document.querySelectorAll(".lt-min-temp");
+  const prevDivs = document.querySelectorAll(".prev_day");
+  const tempDivs = document.querySelectorAll(".max__temp");
+  const minDivs = document.querySelectorAll(".min__temp");
 
   let prevIndex = 0;
 
@@ -17,13 +16,13 @@ export async function main() {
     const time = data.daily.time[dataIndex];
     const dateObject = new Date(time);
 
-    if (dateObject.getDate() > currentDate + 3) {
+    if (dateObject.getDate() > currentDate) {
       const forecastWeather = forecastOptions(data, dataIndex);
       const codeToTen = forecastWeather.codeToTen;
       const codeToSixteen = forecastWeather.codeToSixteen;
 
-      const mincDivs = document.querySelectorAll(".lt-min-code");
-      const mindDivs = document.querySelectorAll(".lt-min-descr");
+      const mincDivs = document.querySelectorAll(".min__code");
+      const mindDivs = document.querySelectorAll(".min__descr");
       mincDivs.forEach((div, innerIndex) => {
         div.textContent = codeToTen[innerIndex];
       });
@@ -31,14 +30,15 @@ export async function main() {
         div.textContent = codeToTen[innerIndex];
       });
 
-      const wcdeDivs = document.querySelectorAll(".lt-max-code");
-      const descDivs = document.querySelectorAll(".lt-max-descr");
+      const wcdeDivs = document.querySelectorAll(".max__code");
+      const descDivs = document.querySelectorAll(".max__descr");
       wcdeDivs.forEach((div, innerIndex) => {
         div.textContent = codeToSixteen[innerIndex];
       });
       descDivs.forEach((div, innerIndex) => {
         div.textContent = codeToSixteen[innerIndex];
       });
+
       prevDivs[prevIndex].textContent = forecastWeather.formattedTime;
       tempDivs[prevIndex].textContent = forecastWeather.roundTemp;
       minDivs[prevIndex].textContent = forecastWeather.roundTempMin;
@@ -46,21 +46,16 @@ export async function main() {
       prevIndex++;
     }
   }
-
-  ltftCodeToComm();
-  ltftCodeToIcon();
+  forecastCodeToIcon();
+  forecastCodeToComm();
 }
 
 function forecastOptions(data, index) {
-  const indicesToRetrieve = [
-    106, 130, 154, 178, 202, 226, 250, 274, 298, 322, 346, 370,
-  ];
+  const indicesToRetrieve = [34, 58, 82];
   const codeToTen = indicesToRetrieve.map(
     (index) => data.hourly.weathercode[index]
   );
-  const indicestoSixteen = [
-    112, 136, 160, 184, 208, 232, 256, 280, 304, 328, 352, 376,
-  ];
+  const indicestoSixteen = [40, 64, 88];
   const codeToSixteen = indicestoSixteen.map(
     (index) => data.hourly.weathercode[index]
   );

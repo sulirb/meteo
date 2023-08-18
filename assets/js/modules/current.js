@@ -1,6 +1,6 @@
-import { fetchMeteo } from "./api";
-import { codeToIcon as currentCodeToIcon } from "./weathericon";
-import { codeToComm as currentCodeToComm } from "./weathercomm";
+import { fetchMeteo } from "../api";
+import { codeToIcon as currentCodeToIcon } from "../utils/weathericon";
+import { codeToComm as currentCodeToComm } from "../utils/weathercomm";
 
 export async function main() {
   const data = await fetchMeteo();

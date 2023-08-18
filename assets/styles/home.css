@@ -132,30 +132,30 @@ a {
   width: 100%;
   height: 100%;
   filter: brightness(1.6);
-  background-image: url("../assets/images/ciel-bleu.jpg");
+  background-image: url("../images/ciel-bleu.jpg");
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-size: cover;
 }
 
 .weather.weather-0::before {
-  background-image: url("../assets/images/ciel-bleu.jpg");
+  background-image: url("../images/ciel-bleu.jpg");
 }
 
 .weather.weather-1::before {
-  background-image: url("../assets/images/ciel-peu-nuage.jpg");
+  background-image: url("../images/ciel-peu-nuage.jpg");
 }
 
 .weather.weather-2::before {
-  background-image: url("../assets/images/ciel-moyen-nuage.jpg");
+  background-image: url("../images/ciel-moyen-nuage.jpg");
 }
 
 .weather.weather-3::before {
-  background-image: url("../assets/images/ciel-nuage.jpg");
+  background-image: url("../images/ciel-nuage.jpg");
 }
 
 .weather.weather-51::before {
-  background-image: url("../assets/images/ciel-pluie.jpg");
+  background-image: url("../images/ciel-pluie.jpg");
 }
 
 /* Ajoutez d'autres styles CSS si nécessaire *//*# sourceMappingURL=home.css.map */

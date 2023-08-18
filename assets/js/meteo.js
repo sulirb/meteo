@@ -1,11 +1,11 @@
-import { fetchMeteo } from "../utils/api";
-import { codeToIcon } from "../utils/weathericon";
+import { fetchMeteo } from "./api";
+import { codeToIcon } from "./utils/weathericon";
 import {
   today,
   dayPlusOne,
   dayPlusThree,
   dayPlusTwo,
-} from "../utils/daySelector";
+} from "./utils/daySelector";
 
 async function main() {
   const data = await fetchMeteo();
@@ -15,7 +15,7 @@ async function main() {
   const page = urlParams.get("tableau");
 
   function createTable(data) {
-    const table = document.createElement("table");
+    const table = document.createElement("table"); // DEBUT
     const headerRow = table.insertRow();
     headerRow.classList.add("options");
     const properties = [
@@ -31,7 +31,7 @@ async function main() {
     properties.forEach((property) => {
       const headerCell = headerRow.insertCell();
       headerCell.textContent = property;
-    });
+    }); // FIN
 
     const currentDate = new Date().getDate();
 
@@ -48,16 +48,6 @@ async function main() {
       } else if (page === "tableautrois") {
         dayPlusThree(dateObject, currentDate, row);
       }
-
-      const formattedTime = dateObject.toLocaleString("fr-FR", {
-        weekday: "long",
-        day: "2-digit",
-        month: "2-digit",
-        hour: "2-digit",
-        minute: "2-digit",
-      });
-
-      const roundTemp = Math.round(data.temperature_2m[index]) + "°C";
 
       function degToCompass(num) {
         const val = Math.floor(num / 22.5 + 0.5);
@@ -82,10 +72,18 @@ async function main() {
         ];
         return arr[val % 16];
       }
+
+      const formattedTime = dateObject.toLocaleString("fr-FR", {
+        // DEBUT
+        weekday: "long",
+        day: "2-digit",
+        month: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+      });
+      const roundTemp = Math.round(data.temperature_2m[index]) + "°C";
       const windDir = degToCompass(data.winddirection_10m[index]);
-
       const weatherCode = data.weathercode[index];
-
       const values = [
         formattedTime,
         weatherCode,
@@ -94,7 +92,7 @@ async function main() {
         data.windspeed_10m[index] + " km/h",
         data.windgusts_10m[index] + " km/h",
         data.precipitation[index] + " mm",
-      ];
+      ]; // FIN
 
       values.forEach((value) => {
         const cell = row.insertCell();
