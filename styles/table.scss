@@ -1,0 +1,39 @@
+@import url(./style.css);
+
+.titre {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.meteo {
+  table {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #462da9;
+    font-weight: 500;
+  }
+
+  .options {
+    font-size: 18px;
+    font-weight: 700;
+  }
+  td {
+    padding: 0.2em;
+    border: solid 1px white;
+    text-align: center;
+  }
+  .before-time {
+    display: none;
+  }
+}
+
+.weather__code {
+  img {
+    width: 30px;
+  }
+}
+
+.index-anchor {
+  font-size: 12px;
+  position: absolute;
+}

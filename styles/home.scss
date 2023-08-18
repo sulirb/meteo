@@ -1,0 +1,177 @@
+@import url(./style.css);
+
+:root {
+  font-family: "Gothic A1", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  margin: 1em;
+}
+.weather {
+  padding: 5rem 3rem;
+  position: relative;
+
+  h2 {
+    font-weight: 800;
+    padding: 1.5rem 1rem 3rem;
+    font-size: 40px;
+  }
+
+  &__content {
+    background-color: rgb(0 0 0 / 50%);
+    position: relative;
+    border-radius: 5px;
+  }
+
+  &__flex {
+    padding: 1em 1em 2em;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+
+  &__flex1,
+  &__flex2 {
+    gap: 0.2em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  &__flex1 {
+    align-items: flex-start;
+    .temps {
+      display: flex;
+      align-items: center;
+      height: 66%;
+    }
+  }
+
+  &__flex2 {
+    padding-top: 0.5em;
+  }
+
+  &__code {
+    margin-right: 0.8em;
+    img {
+      width: 60px;
+    }
+  }
+
+  &__temp {
+    font-size: 60px;
+  }
+
+  &__descr {
+    font-size: 20px;
+  }
+
+  &__flexwind {
+    font-size: 20px;
+    display: flex;
+    height: 33%;
+    &-windspeed {
+      margin-right: 0.3em;
+    }
+  }
+
+  &__windgusts,
+  &__rain {
+    height: 33%;
+    font-size: 20px;
+  }
+}
+
+.prev {
+  opacity: 0.9;
+  background-color: antiquewhite;
+  color: black;
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  &_day {
+    text-transform: uppercase;
+    margin: 0.8em 2em;
+    font-weight: 700;
+    font-size: 30px;
+    width: 20%;
+  }
+
+  &_flex {
+    padding: 2em;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+  }
+
+  &_min,
+  &_max {
+    gap: 0.5em;
+    display: flex;
+    align-items: center;
+    .weather__descr {
+      margin: 0.6em;
+    }
+  }
+
+  .temps {
+    gap: 0.5em;
+    align-items: center;
+    display: flex;
+    img {
+      width: 50px;
+    }
+  }
+  .max__descr,
+  .min__descr {
+    font-weight: 600;
+  }
+  &_chevron {
+    height: 40px;
+    font-size: 40px;
+    color: black;
+  }
+}
+
+.weather:before {
+  content: " ";
+  transform: rotate(180deg);
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  filter: brightness(1.6);
+  background-image: url("../assets/images/ciel-bleu.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: cover;
+}
+
+.weather.weather-0::before {
+  background-image: url("../assets/images/ciel-bleu.jpg");
+}
+
+.weather.weather-1::before {
+  background-image: url("../assets/images/ciel-peu-nuage.jpg");
+}
+
+.weather.weather-2::before {
+  background-image: url("../assets/images/ciel-moyen-nuage.jpg");
+}
+
+.weather.weather-3::before {
+  background-image: url("../assets/images/ciel-nuage.jpg");
+}
+
+.weather.weather-51::before {
+  background-image: url("../assets/images/ciel-pluie.jpg");
+}
+
+/* Ajoutez d'autres styles CSS si nécessaire */
