@@ -5,7 +5,6 @@ import { codeToComm as forecastCodeToComm } from "../utils/weathercomm";
 export async function main() {
   const data = await fetchMeteo();
 
-  const currentDate = new Date().getDate();
   const prevDivs = document.querySelectorAll(".prev_day");
   const tempDivs = document.querySelectorAll(".max__temp");
   const minDivs = document.querySelectorAll(".min__temp");
@@ -14,9 +13,11 @@ export async function main() {
 
   for (let dataIndex = 0; dataIndex < data.daily.time.length; dataIndex++) {
     const time = data.daily.time[dataIndex];
+    const currentDateTimestamp = Date.now();
     const dateObject = new Date(time);
+    const dateObjectTimestamp = dateObject.getTime();
 
-    if (dateObject.getDate() > currentDate) {
+    if (dateObjectTimestamp > currentDateTimestamp) {
       const forecastWeather = forecastOptions(data, dataIndex);
       const codeToTen = forecastWeather.codeToTen;
       const codeToSixteen = forecastWeather.codeToSixteen;

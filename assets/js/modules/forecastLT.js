@@ -15,9 +15,12 @@ export async function main() {
 
   for (let dataIndex = 0; dataIndex < data.daily.time.length; dataIndex++) {
     const time = data.daily.time[dataIndex];
+    const currentDateTimestamp = Date.now();
+    const currentDatePlus3Days = currentDateTimestamp + 3 * 24 * 60 * 60 * 1000;
     const dateObject = new Date(time);
+    const dateObjectTimestamp = dateObject.getTime();
 
-    if (dateObject.getDate() > currentDate + 3) {
+    if (dateObjectTimestamp > currentDatePlus3Days) {
       const forecastWeather = forecastOptions(data, dataIndex);
       const codeToTen = forecastWeather.codeToTen;
       const codeToSixteen = forecastWeather.codeToSixteen;

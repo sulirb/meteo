@@ -1,7 +1,5 @@
 import { main as current } from "./modules/current";
 import { main as forecast } from "./modules/forecast";
-import { main as forecastLT } from "./modules/forecastLT";
+import { main as longTerm } from "./modules/forecastLT";
 
-current();
-forecast();
-forecastLT();
+longTerm();

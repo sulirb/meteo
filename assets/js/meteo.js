@@ -33,20 +33,23 @@ async function main() {
       headerCell.textContent = property;
     }); // FIN
 
-    const currentDate = new Date().getDate();
+    const currentDate = Date.now();
 
     data.time.forEach((time, index) => {
       const row = table.insertRow();
 
       const dateObject = new Date(time);
+      const dateObjectTimestamp = dateObject.getTime();
+
+      console.log(dateObject);
       if (page === "tableau") {
-        today(dateObject, currentDate, row);
+        today(dateObjectTimestamp, currentDate, row);
       } else if (page === "tableauone") {
-        dayPlusOne(dateObject, currentDate, row);
+        dayPlusOne(dateObjectTimestamp, currentDate, row);
       } else if (page === "tableaudeux") {
-        dayPlusTwo(dateObject, currentDate, row);
+        dayPlusTwo(dateObjectTimestamp, currentDate, row);
       } else if (page === "tableautrois") {
-        dayPlusThree(dateObject, currentDate, row);
+        dayPlusThree(dateObjectTimestamp, currentDate, row);
       }
 
       function degToCompass(num) {
