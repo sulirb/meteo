@@ -1,11 +1,11 @@
-import { fetchMeteo } from "./api";
-import { codeToIcon } from "./utils/weathericon";
+import { fetchMeteo } from "./api/index.js";
+import { codeToIcon } from "./utils/weathericon.js";
 import {
   today,
   dayPlusOne,
   dayPlusThree,
   dayPlusTwo,
-} from "./utils/daySelector";
+} from "./utils/daySelector.js";
 
 async function main() {
   const data = await fetchMeteo();

@@ -1,6 +1,6 @@
-import { meteoLt } from "../api";
-import { codeToIcon as ltftCodeToIcon } from "../utils/weathericon";
-import { codeToComm as ltftCodeToComm } from "../utils/weathercomm";
+import { meteoLt } from "../api/index.js";
+import { codeToIcon as ltftCodeToIcon } from "../utils/weathericon.js";
+import { codeToComm as ltftCodeToComm } from "../utils/weathercomm.js";
 
 export async function main() {
   const data = await meteoLt();
