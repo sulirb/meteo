@@ -41,14 +41,13 @@ async function main() {
       const dateObject = new Date(time);
       const dateObjectTimestamp = dateObject.getTime();
 
-      console.log(dateObject);
       if (page === "tableau") {
         today(dateObjectTimestamp, currentDate, row);
-      } else if (page === "tableauone") {
+      } else if (page === "tableau1") {
         dayPlusOne(dateObjectTimestamp, currentDate, row);
-      } else if (page === "tableaudeux") {
+      } else if (page === "tableau2") {
         dayPlusTwo(dateObjectTimestamp, currentDate, row);
-      } else if (page === "tableautrois") {
+      } else if (page === "tableau3") {
         dayPlusThree(dateObjectTimestamp, currentDate, row);
       }
 
