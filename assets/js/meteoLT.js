@@ -1,6 +1,6 @@
-import { fetchMeteo } from "./api/index.js";
+import { meteoLt as fetchMeteo } from "./api/index.js";
 import { codeToIcon } from "./utils/weathericon.js";
-import { daySelector } from "./utils/daySelector.js";
+import { daySelectorLongTerm } from "./utils/daySelector.js";
 
 async function main() {
   const data = await fetchMeteo();
@@ -33,7 +33,7 @@ async function main() {
 
       const dateObject = new Date(time);
 
-      daySelector(page, index, row);
+      daySelectorLongTerm(page, index, row);
 
       function degToCompass(num) {
         const val = Math.floor(num / 22.5 + 0.5);
