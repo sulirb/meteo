@@ -26,12 +26,42 @@ async function main() {
     properties.forEach((property) => {
       const headerCell = headerRow.insertCell();
       headerCell.textContent = property;
-    }); // FIN
+    });
 
     data.time.forEach((time, index) => {
       const row = table.insertRow();
 
       const dateObject = new Date(time);
+
+      function formatAndDisplayDate(date, dateDiv) {
+        const formattedDate = date.toLocaleDateString("fr-FR", {
+          weekday: "long",
+          day: "2-digit",
+          month: "long",
+          year: "numeric",
+        });
+
+        dateDiv.textContent = formattedDate;
+      }
+
+      const millisecondsInDay = 24 * 60 * 60 * 1000;
+      const dateDiv = document.querySelector(".date-tableau");
+
+      const dateInfo = [
+        { page: "tableau", daysBefore: 3 },
+        { page: "tableau1", daysBefore: 2 },
+        { page: "tableau2", daysBefore: 1 },
+        { page: "tableau3", daysBefore: 0 },
+      ];
+
+      const currentPage = dateInfo.find((info) => info.page === page);
+
+      if (currentPage) {
+        const previousDate = new Date(
+          dateObject - millisecondsInDay * currentPage.daysBefore
+        );
+        formatAndDisplayDate(previousDate, dateDiv);
+      }
 
       daySelector(page, index, row);
 
@@ -60,10 +90,6 @@ async function main() {
       }
 
       const formattedTime = dateObject.toLocaleString("fr-FR", {
-        // DEBUT
-        weekday: "long",
-        day: "2-digit",
-        month: "2-digit",
         hour: "2-digit",
         minute: "2-digit",
       });

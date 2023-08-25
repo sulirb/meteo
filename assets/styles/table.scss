@@ -2,7 +2,13 @@
 
 .titre {
   text-align: center;
-  margin-bottom: 2rem;
+  margin: 2rem 0;
+}
+
+.date-tableau {
+  text-align: center;
+  margin: 2rem;
+  font-size: 22px;
 }
 
 .meteo {
@@ -35,5 +41,11 @@
 
 .index-anchor {
   font-size: 12px;
-  position: absolute;
+  text-decoration: none;
+  color: white;
+  margin: 1em;
+  &:hover {
+    text-decoration: underline;
+    font-size: 16px;
+  }
 }

@@ -33,7 +33,52 @@ async function main() {
 
       const dateObject = new Date(time);
 
+      function formatAndDisplayDate(date, dateDiv) {
+        const formattedDate = date.toLocaleDateString("fr-FR", {
+          weekday: "long",
+          day: "2-digit",
+          month: "long",
+          year: "numeric",
+        });
+
+        dateDiv.textContent = formattedDate;
+      }
+
+      const millisecondsInDay = 24 * 60 * 60 * 1000;
+      const dateDiv = document.querySelector(".date-tableau");
+
+      const dateInfo = [
+        { page: "tableau4", daysBefore: 11 },
+        { page: "tableau5", daysBefore: 10 },
+        { page: "tableau6", daysBefore: 9 },
+        { page: "tableau7", daysBefore: 8 },
+        { page: "tableau8", daysBefore: 7 },
+        { page: "tableau9", daysBefore: 6 },
+        { page: "tableau10", daysBefore: 5 },
+        { page: "tableau11", daysBefore: 4 },
+        { page: "tableau12", daysBefore: 3 },
+        { page: "tableau13", daysBefore: 2 },
+        { page: "tableau14", daysBefore: 1 },
+        { page: "tableau15", daysBefore: 0 },
+      ];
+
+      const currentPage = dateInfo.find((info) => info.page === page);
+
+      if (currentPage) {
+        const previousDate = new Date(
+          dateObject - millisecondsInDay * currentPage.daysBefore
+        );
+        formatAndDisplayDate(previousDate, dateDiv);
+      }
+
       daySelectorLongTerm(page, index, row);
+
+      const formattedDate = dateObject.toLocaleDateString("fr-FR", {
+        weekday: "long",
+        day: "2-digit",
+        month: "long",
+        year: "numeric",
+      });
 
       function degToCompass(num) {
         const val = Math.floor(num / 22.5 + 0.5);
@@ -60,10 +105,6 @@ async function main() {
       }
 
       const formattedTime = dateObject.toLocaleString("fr-FR", {
-        // DEBUT
-        weekday: "long",
-        day: "2-digit",
-        month: "2-digit",
         hour: "2-digit",
         minute: "2-digit",
       });
