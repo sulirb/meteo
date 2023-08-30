@@ -2,44 +2,118 @@
 .titre {
   text-align: center;
   margin: 2rem 0;
+  color: black;
 }
 
 .date-tableau {
-  text-align: center;
-  margin: 2rem;
   font-size: 22px;
+  color: black;
+  margin: 0 1em 0.5em;
 }
 
+.flex-date {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.flex-date__right, .flex-date__left {
+  font-size: 70px;
+  color: white;
+  border: black;
+}
+
+.meteo {
+  margin-bottom: 4em;
+}
 .meteo table {
+  border-collapse: collapse;
   margin-left: auto;
   margin-right: auto;
-  background-color: #462da9;
+  background-color: #231e1e;
+  border-radius: 10px;
   font-weight: 500;
+  overflow: hidden;
 }
 .meteo .options {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
+  background-color: #4c4aa7;
+}
+.meteo .options td {
+  padding: 1em;
 }
 .meteo td {
-  padding: 0.2em;
-  border: solid 1px white;
+  font-size: 18px;
+  padding: 1em;
   text-align: center;
+}
+.meteo td:hover {
+  background-color: #4c4aa7;
+}
+.meteo .current-time:hover,
+.meteo .current-time.odd:hover {
+  background-color: rgba(76, 74, 167, 0.3098039216);
+}
+.meteo .current-time.odd {
+  background-color: rgb(65, 58, 58);
 }
 .meteo .before-time {
   display: none;
 }
 
 .weather__code img {
-  width: 30px;
+  width: 40px;
 }
 
 .index-anchor {
-  font-size: 12px;
+  cursor: pointer;
+  font-size: 18px;
   text-decoration: none;
-  color: white;
+  padding: 0.7em 1em;
+  border-radius: 5px;
+  background-color: #231e1e;
+  color: antiquewhite;
   margin: 1em;
 }
 .index-anchor:hover {
-  text-decoration: underline;
-  font-size: 16px;
+  background-color: rgb(65, 58, 58);
+}
+
+@media screen and (max-width: 800px) {
+  .meteo td:nth-child(5),
+  .meteo td:nth-child(6),
+  .meteo td:nth-child(7) {
+    display: none;
+  }
+  .meteo .options td:nth-child(5),
+  .meteo .options td:nth-child(6),
+  .meteo .options td:nth-child(7) {
+    display: none;
+  }
+}
+@media screen and (max-width: 520px) {
+  .index-anchor {
+    font-size: 13px;
+    padding: 0.5em 0.7em;
+    margin: 0.8em 0;
+  }
+  .flex-date__left, .flex-date__right {
+    font-size: 50px;
+  }
+  .flex-date .date-tableau {
+    font-size: 20px;
+    margin: 0 0.7em 0.5em;
+  }
+  .meteo .options td {
+    font-size: 16px;
+    padding: 0.6em;
+  }
+  .meteo td {
+    font-size: 15px;
+    padding: 0.6em;
+  }
+  .weather__code img {
+    width: 35px;
+  }
 }/*# sourceMappingURL=table.css.map */

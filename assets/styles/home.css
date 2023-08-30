@@ -1,9 +1,4 @@
-@charset "UTF-8";
 @import url(./style.css);
-:root {
-  font-family: "Gothic A1", sans-serif;
-}
-
 a {
   text-decoration: none;
   color: white;
@@ -74,17 +69,36 @@ a {
   font-size: 20px;
 }
 
-.prev {
-  opacity: 0.9;
-  background-color: antiquewhite;
+.prev-container {
+  margin-bottom: 4em;
+}
+.prev-container__title {
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: center;
+  font-size: 30px;
+  margin: 1em;
   color: black;
-  border: 2px solid black;
+}
+
+.prev {
+  width: 75%;
+  margin: 1em auto;
+  opacity: 0.9;
+  background-color: #231e1e;
+  border: 5px solid white;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+  color: antiquewhite;
+  border-radius: 8px;
   display: flex;
   align-items: center;
 }
+.prev:hover {
+  background-color: rgb(65, 58, 58);
+}
 .prev_day {
   text-transform: uppercase;
-  margin: 0.8em 2em;
+  margin: 0.8em 1.5em;
   font-weight: 700;
   font-size: 30px;
   width: 20%;
@@ -105,12 +119,21 @@ a {
   margin: 0.6em;
 }
 .prev .temps {
-  gap: 0.5em;
+  gap: 1em;
   align-items: center;
   display: flex;
 }
-.prev .temps img {
+.prev .temps .min__code,
+.prev .temps .max__code {
+  transition: transform 300ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+.prev .temps .min__code img,
+.prev .temps .max__code img {
   width: 50px;
+}
+.prev .temps .min__code:hover,
+.prev .temps .max__code:hover {
+  transform: scale(1.5);
 }
 .prev .max__descr,
 .prev .min__descr {
@@ -119,7 +142,6 @@ a {
 .prev_chevron {
   height: 40px;
   font-size: 40px;
-  color: black;
 }
 
 .weather:before {
@@ -138,24 +160,58 @@ a {
   background-size: cover;
 }
 
-.weather.weather-0::before {
-  background-image: url("../images/ciel-bleu.jpg");
-}
-
-.weather.weather-1::before {
-  background-image: url("../images/ciel-peu-nuage.jpg");
-}
-
-.weather.weather-2::before {
-  background-image: url("../images/ciel-moyen-nuage.jpg");
-}
-
-.weather.weather-3::before {
-  background-image: url("../images/ciel-nuage.jpg");
-}
-
-.weather.weather-51::before {
-  background-image: url("../images/ciel-pluie.jpg");
-}
-
-/* Ajoutez d'autres styles CSS si nécessaire *//*# sourceMappingURL=home.css.map */
+@media screen and (max-width: 620px) {
+  .weather {
+    padding: 3em 2em;
+  }
+  .weather h2 {
+    padding: 1.5rem 1rem 2rem;
+  }
+  .weather__flex {
+    flex-direction: column;
+  }
+  .weather__flex2 {
+    align-items: flex-start;
+    padding-top: 1.2em;
+  }
+  .weather__descr {
+    font-size: 25px;
+  }
+  .weather__flexwind {
+    flex-wrap: wrap;
+  }
+  .prev {
+    position: relative;
+    width: 82%;
+  }
+  .prev_day {
+    margin: 0 0.5em;
+    font-size: 25px;
+  }
+  .prev_flex {
+    flex-direction: column;
+    padding: 0.5em;
+    gap: 0.8em;
+  }
+  .prev_min, .prev_max {
+    gap: 1em;
+  }
+  .prev_link {
+    position: absolute;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .prev_chevron {
+    display: none;
+  }
+  .prev .temps .min__code img,
+  .prev .temps .max__code img {
+    width: 30px;
+  }
+  .prev .min__descr,
+  .prev .max__descr {
+    font-weight: 400;
+    font-size: 15px;
+  }
+}/*# sourceMappingURL=home.css.map */

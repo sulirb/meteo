@@ -96,14 +96,17 @@ async function main() {
       const roundTemp = Math.round(data.temperature_2m[index]) + "°C";
       const windDir = degToCompass(data.winddirection_10m[index]);
       const weatherCode = data.weathercode[index];
+      const windspeed = data.windspeed_10m[index] + " km/h";
+      const windgusts = data.windgusts_10m[index] + " km/h";
+      const precipitation = data.precipitation[index] + " mm";
       const values = [
         formattedTime,
         weatherCode,
         roundTemp,
         windDir,
-        data.windspeed_10m[index] + " km/h",
-        data.windgusts_10m[index] + " km/h",
-        data.precipitation[index] + " mm",
+        windspeed,
+        windgusts,
+        precipitation,
       ]; // FIN
 
       values.forEach((value) => {
@@ -112,6 +115,9 @@ async function main() {
 
         if (weatherCode === value) {
           cell.classList.add("weather__code");
+        }
+        if (index % 2 === 1) {
+          row.classList.add("odd");
         }
       });
     });

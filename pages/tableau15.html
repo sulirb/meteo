@@ -10,9 +10,24 @@
     <title>Météo</title>
   </head>
   <body>
-    <a href="/" class="index-anchor">Retour accueil</a>
+    <a href="/"><button class="index-anchor">Retour à l'accueil</button></a>
     <h1 class="titre">TABLEAU METEO</h1>
-    <div class="date-tableau"></div>
+    <div class="flex-date">
+      <a href="/pages/tableau14.html?tableau=tableau14"
+        ><div class="flex-date__left">
+          <iconify-icon
+            icon="prime:chevron-left"
+            title="Jour précédent"
+          ></iconify-icon></div
+      ></a>
+      <div class="date-tableau"></div>
+        <div class="flex-date__right">
+          <iconify-icon
+            icon="prime:chevron-right"
+            title="Pas de prévisions disponibles pour le jour suivant !"
+          ></iconify-icon></div
+      ></a>
+    </div>
     <div class="meteo"></div>
   </body>
 </html>
