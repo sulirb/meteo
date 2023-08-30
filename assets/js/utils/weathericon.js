@@ -3,10 +3,11 @@ export async function codeToIcon() {
     ".weather__code, .max__code, .min__code"
   );
 
-  async function codeImage(codeElement, link) {
+  async function codeImage(codeElement, link, altText) {
     codeElement.textContent = "";
     const img = document.createElement("img");
     img.setAttribute("src", link);
+    img.setAttribute("alt", altText);
     codeElement.appendChild(img);
   }
 
@@ -16,32 +17,38 @@ export async function codeToIcon() {
     if (codeValue === "0") {
       await codeImage(
         codeElement,
-        "https://api.iconify.design/noto-v1/sun.svg"
+        "https://api.iconify.design/noto-v1/sun.svg",
+        "Sun"
       );
     } else if (codeValue === "1") {
       await codeImage(
         codeElement,
-        "https://api.iconify.design/noto-v1/sun-behind-small-cloud.svg"
+        "https://api.iconify.design/noto-v1/sun-behind-small-cloud.svg",
+        "Sun behind small cloud"
       );
     } else if (codeValue === "2") {
       await codeImage(
         codeElement,
-        "https://api.iconify.design/noto-v1/sun-behind-cloud.svg"
+        "https://api.iconify.design/noto-v1/sun-behind-cloud.svg",
+        "Sun behind cloud"
       );
     } else if (codeValue === "3") {
       await codeImage(
         codeElement,
-        "https://api.iconify.design/noto-v1/cloud.svg"
+        "https://api.iconify.design/noto-v1/cloud.svg",
+        "Cloud"
       );
     } else if (["51", "53", "55", "61", "63", "65"].includes(codeValue)) {
       await codeImage(
         codeElement,
-        "https://api.iconify.design/noto/cloud-with-rain.svg"
+        "https://api.iconify.design/noto/cloud-with-rain.svg",
+        "Cloud with rain"
       );
     } else if (["81", "82", "83", "95", "96", "99"].includes(codeValue)) {
       await codeImage(
         codeElement,
-        "https://api.iconify.design/noto/cloud-with-lightning-and-rain.svg"
+        "https://api.iconify.design/noto/cloud-with-lightning-and-rain.svg",
+        "Cloud with lightning and rain"
       );
     }
   }
