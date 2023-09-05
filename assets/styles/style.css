@@ -15,4 +15,36 @@
 * {
   margin: 0;
   padding: 0;
+}
+
+header {
+  background-color: antiquewhite;
+  border-bottom: 5px solid black;
+}
+header a {
+  text-decoration: none;
+}
+header h1 {
+  font-size: 40px;
+  text-align: center;
+  padding: 0.5em;
+  color: black;
+  font-family: "Sarina", cursive;
+}
+
+footer {
+  background-color: antiquewhite;
+  border-top: 5px solid black;
+  font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+}
+footer .copyright,
+footer .mentions {
+  padding: 0.5em;
+  text-align: center;
+}
+footer .copyright a,
+footer .mentions a {
+  font-size: 20px;
+  color: black;
+  text-decoration: none;
 }/*# sourceMappingURL=style.css.map */

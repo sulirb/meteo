@@ -5,11 +5,15 @@ a {
   margin: 1em;
 }
 
+header a {
+  margin: 0;
+}
+
 .weather {
   padding: 5rem 3rem;
   position: relative;
 }
-.weather h1 {
+.weather h2 {
   font-weight: 800;
   padding: 1.5rem 1rem 3rem;
   font-size: 40px;
@@ -154,7 +158,7 @@ a {
   width: 100%;
   height: 100%;
   filter: brightness(1.6);
-  background-image: url("../images/ciel-bleu.jpg");
+  background-image: url("../images/ciel-bleu.webp");
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-size: cover;

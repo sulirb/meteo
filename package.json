@@ -12,6 +12,7 @@
     "vite": "^4.4.5"
   },
   "dependencies": {
+    "bulma": "^0.9.4",
     "iconify": "^1.4.0"
   }
 }
