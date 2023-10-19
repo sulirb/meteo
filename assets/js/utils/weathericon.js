@@ -44,11 +44,23 @@ export async function codeToIcon() {
         "https://api.iconify.design/noto/cloud-with-rain.svg",
         "Cloud with rain"
       );
-    } else if (["81", "82", "83", "95", "96", "99"].includes(codeValue)) {
+    } else if (["80", "81", "82", "83", "95", "96", "99"].includes(codeValue)) {
       await codeImage(
         codeElement,
         "https://api.iconify.design/noto/cloud-with-lightning-and-rain.svg",
         "Cloud with lightning and rain"
+      );
+    } else if (["45", "48"].includes(codeValue)) {
+      await codeImage(
+        codeElement,
+        "https://api.iconify.design/noto-v1/fog.svg",
+        "Fog"
+      );
+    } else if (["71", "73", "75", "77"].includes(codeValue)) {
+      await codeImage(
+        codeElement,
+        "https://api.iconify.design/noto-v1/cloud-with-snow.svg",
+        "Cloud with snow"
       );
     }
   }

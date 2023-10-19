@@ -48,18 +48,18 @@ async function main() {
       const dateDiv = document.querySelector(".date-tableau");
 
       const dateInfo = [
-        { page: "tableau4", daysBefore: 11 },
-        { page: "tableau5", daysBefore: 10 },
-        { page: "tableau6", daysBefore: 9 },
-        { page: "tableau7", daysBefore: 8 },
-        { page: "tableau8", daysBefore: 7 },
-        { page: "tableau9", daysBefore: 6 },
-        { page: "tableau10", daysBefore: 5 },
-        { page: "tableau11", daysBefore: 4 },
-        { page: "tableau12", daysBefore: 3 },
-        { page: "tableau13", daysBefore: 2 },
-        { page: "tableau14", daysBefore: 1 },
-        { page: "tableau15", daysBefore: 0 },
+        { page: "tableau4", daysBefore: 11.1 },
+        { page: "tableau5", daysBefore: 10.1 },
+        { page: "tableau6", daysBefore: 9.1 },
+        { page: "tableau7", daysBefore: 8.1 },
+        { page: "tableau8", daysBefore: 7.1 },
+        { page: "tableau9", daysBefore: 6.1 },
+        { page: "tableau10", daysBefore: 5.1 },
+        { page: "tableau11", daysBefore: 4.1 },
+        { page: "tableau12", daysBefore: 3.1 },
+        { page: "tableau13", daysBefore: 2.1 },
+        { page: "tableau14", daysBefore: 1.1 },
+        { page: "tableau15", daysBefore: 0.1 },
       ];
 
       const currentPage = dateInfo.find((info) => info.page === page);

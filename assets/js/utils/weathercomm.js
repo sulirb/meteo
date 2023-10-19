@@ -21,9 +21,13 @@ export async function codeToComm() {
       await codeComm(codeElement, "Nuageux dans l'ensemble");
     } else if (codeValue === "3") {
       await codeComm(codeElement, "Nuageux");
+    } else if (["45", "48"].includes(codeValue)) {
+      await codeComm(codeElement, "Brouillard");
     } else if (["51", "53", "55", "61", "63", "65"].includes(codeValue)) {
       await codeComm(codeElement, "Pluvieux");
-    } else if (["81", "82", "83", "95", "96", "99"].includes(codeValue)) {
+    } else if (["71", "73", "75", "77"].includes(codeValue)) {
+      await codeComm(codeElement, "Neigeux");
+    } else if (["80", "81", "82", "83", "95", "96", "99"].includes(codeValue)) {
       await codeComm(codeElement, "Orageux");
     }
   }
