@@ -105,14 +105,14 @@ header a {
   margin: 0.8em 1.5em;
   font-weight: 700;
   font-size: 30px;
-  width: 20%;
+  width: 15%;
 }
 .prev_flex {
-  padding: 2em;
+  padding: 1em;
   position: relative;
   display: flex;
   justify-content: space-between;
-  width: 80%;
+  width: 85%;
 }
 .prev_min, .prev_max {
   gap: 0.5em;
@@ -164,7 +164,43 @@ header a {
   background-size: cover;
 }
 
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 1300px) {
+  .prev {
+    position: relative;
+  }
+  .prev_day {
+    margin: 0 0.5em;
+    font-size: 40px;
+  }
+  .prev_flex {
+    flex-direction: column;
+    padding: 0.5em;
+    gap: 0.8em;
+  }
+  .prev_min, .prev_max {
+    gap: 1em;
+    font-size: 25px;
+  }
+  .prev_link {
+    position: absolute;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .prev_chevron {
+    display: none;
+  }
+  .prev .temps .min__code img,
+  .prev .temps .max__code img {
+    width: 50px;
+  }
+  .prev .min__descr,
+  .prev .max__descr {
+    font-weight: 400;
+    font-size: 25px;
+  }
+}
+@media screen and (max-width: 768px) {
   .weather {
     padding: 3em 2em;
   }
@@ -185,37 +221,20 @@ header a {
     flex-wrap: wrap;
   }
   .prev {
-    position: relative;
-    width: 82%;
+    width: 100%;
   }
   .prev_day {
-    margin: 0 0.5em;
-    font-size: 25px;
-  }
-  .prev_flex {
-    flex-direction: column;
-    padding: 0.5em;
-    gap: 0.8em;
+    font-size: 30px;
   }
   .prev_min, .prev_max {
-    gap: 1em;
-  }
-  .prev_link {
-    position: absolute;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-  }
-  .prev_chevron {
-    display: none;
+    font-size: 20px;
   }
   .prev .temps .min__code img,
   .prev .temps .max__code img {
-    width: 30px;
+    width: 40px;
   }
   .prev .min__descr,
   .prev .max__descr {
-    font-weight: 400;
-    font-size: 15px;
+    font-size: 20px;
   }
 }/*# sourceMappingURL=home.css.map */

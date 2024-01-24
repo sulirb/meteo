@@ -56,7 +56,7 @@ export async function codeToIcon() {
         "https://api.iconify.design/noto-v1/fog.svg",
         "Fog"
       );
-    } else if (["71", "73", "75", "77"].includes(codeValue)) {
+    } else if (["71", "73", "75", "77", "85", "86"].includes(codeValue)) {
       await codeImage(
         codeElement,
         "https://api.iconify.design/noto-v1/cloud-with-snow.svg",

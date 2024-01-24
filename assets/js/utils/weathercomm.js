@@ -25,7 +25,7 @@ export async function codeToComm() {
       await codeComm(codeElement, "Brouillard");
     } else if (["51", "53", "55", "61", "63", "65"].includes(codeValue)) {
       await codeComm(codeElement, "Pluvieux");
-    } else if (["71", "73", "75", "77"].includes(codeValue)) {
+    } else if (["71", "73", "75", "77", "85", "86"].includes(codeValue)) {
       await codeComm(codeElement, "Neigeux");
     } else if (["80", "81", "82", "83", "95", "96", "99"].includes(codeValue)) {
       await codeComm(codeElement, "Orageux");

@@ -119,15 +119,15 @@ header a {
     margin: 0.8em 1.5em;
     font-weight: 700;
     font-size: 30px;
-    width: 20%;
+    width: 15%;
   }
 
   &_flex {
-    padding: 2em;
+    padding: 1em;
     position: relative;
     display: flex;
     justify-content: space-between;
-    width: 80%;
+    width: 85%;
   }
 
   &_min,
@@ -184,7 +184,55 @@ header a {
   background-size: cover;
 }
 
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 1300px) {
+  .prev {
+    position: relative;
+    &_day {
+      margin: 0 0.5em;
+      font-size: 40px;
+    }
+
+    &_flex {
+      flex-direction: column;
+      padding: 0.5em;
+      gap: 0.8em;
+    }
+
+    &_min,
+    &_max {
+      gap: 1em;
+      font-size: 25px;
+    }
+
+    &_link {
+      position: absolute;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    &_chevron {
+      display: none;
+    }
+
+    .temps {
+      .min__code,
+      .max__code {
+        img {
+          width: 50px;
+        }
+      }
+    }
+
+    .min__descr,
+    .max__descr {
+      font-weight: 400;
+      font-size: 25px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
   .weather {
     padding: 3em 2em;
 
@@ -210,49 +258,25 @@ header a {
     }
   }
   .prev {
-    position: relative;
-    width: 82%;
-
+    width: 100%;
     &_day {
-      margin: 0 0.5em;
-      font-size: 25px;
+      font-size: 30px;
     }
-
-    &_flex {
-      flex-direction: column;
-      padding: 0.5em;
-      gap: 0.8em;
-    }
-
     &_min,
     &_max {
-      gap: 1em;
+      font-size: 20px;
     }
-
-    &_link {
-      position: absolute;
-      margin: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    &_chevron {
-      display: none;
-    }
-
     .temps {
       .min__code,
       .max__code {
         img {
-          width: 30px;
+          width: 40px;
         }
       }
     }
-
     .min__descr,
     .max__descr {
-      font-weight: 400;
-      font-size: 15px;
+      font-size: 20px;
     }
   }
 }
