@@ -5,9 +5,9 @@ import { codeToComm as forecastCodeToComm } from "../utils/weathercomm.js";
 export async function main() {
   const data = await fetchMeteo();
 
-  const prevDivs = document.querySelectorAll(".prev_day");
-  const tempDivs = document.querySelectorAll(".max__temp");
-  const minDivs = document.querySelectorAll(".min__temp");
+  const prevDivs = document.querySelectorAll(".ct-prev-day");
+  const tempDivs = document.querySelectorAll(".ct-max-temp");
+  const minDivs = document.querySelectorAll(".ct-min-temp");
 
   let prevIndex = 0;
 
@@ -22,8 +22,8 @@ export async function main() {
       const codeToTen = forecastWeather.codeToTen;
       const codeToSixteen = forecastWeather.codeToSixteen;
 
-      const mincDivs = document.querySelectorAll(".min__code");
-      const mindDivs = document.querySelectorAll(".min__descr");
+      const mincDivs = document.querySelectorAll(".ct-min-code");
+      const mindDivs = document.querySelectorAll(".ct-min-descr");
       mincDivs.forEach((div, innerIndex) => {
         div.textContent = codeToTen[innerIndex];
       });
@@ -31,8 +31,8 @@ export async function main() {
         div.textContent = codeToTen[innerIndex];
       });
 
-      const wcdeDivs = document.querySelectorAll(".max__code");
-      const descDivs = document.querySelectorAll(".max__descr");
+      const wcdeDivs = document.querySelectorAll(".ct-max-code");
+      const descDivs = document.querySelectorAll(".ct-max-descr");
       wcdeDivs.forEach((div, innerIndex) => {
         div.textContent = codeToSixteen[innerIndex];
       });
