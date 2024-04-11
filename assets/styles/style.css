@@ -37,11 +37,16 @@ footer {
   background-color: antiquewhite;
   border-top: 5px solid black;
   font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+  text-align: center;
+  font-size: 18px;
+  color: black;
+  padding: 1em 0 2em;
 }
 footer .copyright,
 footer .mentions {
   padding: 0.5em;
   text-align: center;
+  color: black;
 }
 footer .copyright a,
 footer .mentions a {

@@ -30,8 +30,7 @@ header a {
   justify-content: space-between;
   align-items: stretch;
 }
-.weather__flex1,
-.weather__flex2 {
+.weather__flex1, .weather__flex2 {
   gap: 0.2em;
   display: flex;
   flex-direction: column;
@@ -69,8 +68,7 @@ header a {
 .weather__flexwind-windspeed {
   margin-right: 0.3em;
 }
-.weather__windgusts,
-.weather__rain {
+.weather__windgusts, .weather__rain {
   height: 33%;
   font-size: 20px;
 }
@@ -93,8 +91,7 @@ header a {
   opacity: 0.9;
   background-color: #231e1e;
   border: 5px solid white;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
-    rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
   color: antiquewhite;
   border-radius: 8px;
   display: flex;
@@ -117,14 +114,12 @@ header a {
   justify-content: space-between;
   width: 85%;
 }
-.prev_min,
-.prev_max {
+.prev_min, .prev_max {
   gap: 0.5em;
   display: flex;
   align-items: center;
 }
-.prev_min .weather__descr,
-.prev_max .weather__descr {
+.prev_min .weather__descr, .prev_max .weather__descr {
   margin: 0.6em;
 }
 .prev .temps {
@@ -182,8 +177,7 @@ header a {
     padding: 0.5em;
     gap: 0.8em;
   }
-  .prev_min,
-  .prev_max {
+  .prev_min, .prev_max {
     gap: 1em;
     font-size: 25px;
   }
@@ -232,8 +226,7 @@ header a {
   .prev_day {
     font-size: 30px;
   }
-  .prev_min,
-  .prev_max {
+  .prev_min, .prev_max {
     font-size: 20px;
   }
   .prev .temps .min__code img,
@@ -244,4 +237,4 @@ header a {
   .prev .max__descr {
     font-size: 20px;
   }
-} /*# sourceMappingURL=home.css.map */
+}/*# sourceMappingURL=home.css.map */

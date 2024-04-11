@@ -40,10 +40,15 @@ footer {
   background-color: antiquewhite;
   border-top: 5px solid black;
   font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+  text-align: center;
+  font-size: 18px;
+  color: black;
+  padding: 1em 0 2em;
   .copyright,
   .mentions {
     padding: 0.5em;
     text-align: center;
+    color: black;
     a {
       font-size: 20px;
       color: black;
