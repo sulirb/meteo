@@ -17,4 +17,12 @@ main h3,
 main p,
 main ul {
   margin-bottom: 1em;
+}
+
+.partner {
+  margin-bottom: 10em;
+}
+
+footer a {
+  margin: 1em;
 }/*# sourceMappingURL=mentions.css.map */
