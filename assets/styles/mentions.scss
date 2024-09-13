@@ -7,7 +7,8 @@
 main {
   margin-left: auto;
   margin-right: auto;
-  width: 33%;
+  width: 50%;
+  margin-bottom: 5em;
   h2 {
     margin: 1em 0 1.5em;
     font-size: 30px;
@@ -26,5 +27,11 @@ main {
 footer {
   a {
     margin: 1em;
+  }
+}
+
+@media (max-width: 1200px) {
+  main {
+    width: 70%;
   }
 }

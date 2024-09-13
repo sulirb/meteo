@@ -46,12 +46,13 @@ async function main() {
 
       const millisecondsInDay = 24 * 60 * 60 * 1000;
       const dateDiv = document.querySelector(".date-tableau");
+      const pageTitle = document.querySelector("title");
 
       const dateInfo = [
-        { page: "tableau", daysBefore: 3 },
-        { page: "tableau1", daysBefore: 2 },
-        { page: "tableau2", daysBefore: 1 },
-        { page: "tableau3", daysBefore: 0 },
+        { page: "tableau", daysBefore: 3.1 },
+        { page: "tableau1", daysBefore: 2.1 },
+        { page: "tableau2", daysBefore: 1.1 },
+        { page: "tableau3", daysBefore: 0.1 },
       ];
 
       const currentPage = dateInfo.find((info) => info.page === page);
@@ -62,6 +63,9 @@ async function main() {
         );
         formatAndDisplayDate(previousDate, dateDiv);
       }
+
+      pageTitle.textContent =
+        " Météo Maubeuge | " + dateDiv.textContent.toUpperCase();
 
       daySelector(page, index, row);
 

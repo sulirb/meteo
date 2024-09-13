@@ -46,6 +46,7 @@ async function main() {
 
       const millisecondsInDay = 24 * 60 * 60 * 1000;
       const dateDiv = document.querySelector(".date-tableau");
+      const pageTitle = document.querySelector("title");
 
       const dateInfo = [
         { page: "tableau4", daysBefore: 11.1 },
@@ -70,6 +71,9 @@ async function main() {
         );
         formatAndDisplayDate(previousDate, dateDiv);
       }
+
+      pageTitle.textContent =
+        " Météo Maubeuge | " + dateDiv.textContent.toUpperCase();
 
       daySelectorLongTerm(page, index, row);
 
