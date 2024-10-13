@@ -73,7 +73,7 @@ async function main() {
       }
 
       pageTitle.textContent =
-        " Météo Maubeuge | " + dateDiv.textContent.toUpperCase();
+        "Météo du " + dateDiv.textContent + " | Météo Maubeuge";
 
       daySelectorLongTerm(page, index, row);
 
